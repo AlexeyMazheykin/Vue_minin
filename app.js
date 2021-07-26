@@ -13,11 +13,16 @@ const App = {
             this.inputValue = e.target.value
         },
         addNewNote () {
-            this.notes.push(this.inputValue)
-            this.inputValue = '';
+            if (this.inputValue !== '') {
+                this.notes.push(this.inputValue)
+                this.inputValue = '';
+            }
         },
         itemDelete (e, idx) {
             this.notes.splice(idx, 1)
+        },
+        toUpper (item) {
+            return item.toUpperCase()
         }
     }
 }
